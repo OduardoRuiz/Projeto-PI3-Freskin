@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>Cadastra produto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
+
 <body class="container mt-5 bg-light">
     <h1>Cadastra produtos</h1>
-    <form method="POST" action="{{ route('product.store') }}">
+    <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <span class="form-label">Nome</span>
@@ -15,15 +17,15 @@
         <div class="row">
             <span class="form-label">Tipo</span>
             <select name="type" class="form-select" aria-label="Default select example">
-              <option selected>Selecione uma opção</option>
-              <option value="fruta">Fruta</option>
-              <option value="verdura">Verdura</option>
-              <option value="legume">Legume</option>
+                <option selected>Selecione uma opção</option>
+                <option value="fruta">Fruta</option>
+                <option value="verdura">Verdura</option>
+                <option value="legume">Legume</option>
             </select>
         </div>
         <div class="row">
-            <span class="form-label">Qtds</span>
-            <input type="number" min="0" max="1000000" name="qtds"  class="form-control">
+            <span class="form-label">Quantidade</span>
+            <input type="number" min="0" max="1000000" name="qtds" class="form-control">
         </div>
         <div class="row">
             <span class="form-label">Preço</span>
@@ -33,10 +35,15 @@
             <span class="form-label">Descrição</span>
             <textarea class="form-control" name="description"></textarea>
         </div>
-        
+        <div class="row">
+            <span class="form-label">Imagem</span>
+            <input type="file" class="form-control" name="image">
+        </div>
+
         <div class="row mt-4">
             <button type="submit" class="btn btn-success btn-lg">Salvar</button>
         </div>
     </form>
 </body>
+
 </html>
