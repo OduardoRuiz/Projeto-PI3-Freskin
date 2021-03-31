@@ -24,6 +24,10 @@
             </select>
         </div>
         <div class="row">
+            <span class="form-label">Quantidade</span>
+            <input type="number" min="0" max="1000000" name="qtds" class="form-control" value="{{ $product->qtds }}">
+        </div>
+        <div class="row">
             <span class="form-label">Descrição</span>
             <textarea class="form-control" name="description">{{ $product->description }}</textarea>
         </div>
