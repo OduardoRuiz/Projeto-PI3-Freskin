@@ -31,6 +31,11 @@
             <span class="form-label">Preço</span>
             <input type="number" min="0.00" max="10000.00" name="price" step="0.01" class="form-control" value="{{ $product->price }}">
         </div>
+
+        <div class="row">
+            <span class="form-label">Quantidade</span>
+            <input type="number" min="0" max="1000000" name="qtds" value="{{ $product->qtds }}" class="form-control">
+        </div>
         <div class="row">
             <span class="form-label">Imagem</span>
             <input type="file" class="form-control" name="image">
