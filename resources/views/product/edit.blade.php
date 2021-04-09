@@ -27,17 +27,27 @@
                 </select>
             </div>
             <div class="row">
-                <span class="form-label">Descrição</span>
-                <textarea class="form-control" name="description">{{ $product->description }}</textarea>
+                <span class="form-label">Quantidade</span>
+                <input type="number" min="0" max="1000000" name="qtds" value="{{ $product->qtds }}" class="form-control">
             </div>
+
             <div class="row">
                 <span class="form-label">Preço</span>
                 <input type="number" min="0.00" max="10000.00" name="price" step="0.01" class="form-control" value="{{ $product->price }}">
             </div>
+            <div class="row">
+                <span class="form-label">Descrição</span>
+                <textarea class="form-control" name="description">{{ $product->description }}</textarea>
+            </div>
 
             <div class="row">
-                <span class="form-label">Quantidade</span>
-                <input type="number" min="0" max="1000000" name="qtds" value="{{ $product->qtds }}" class="form-control">
+                <span class="form-label">Tags</span>
+                <select class="form-select" name="tags[]" multiple>
+                    @foreach($tags as $tag)
+                    <option value="{{$tag->id}}" @if($product->tags->contains($tag->id)) selected @endif>{{$tag->name}}</option>
+                    @endforeach
+                </select>
+
             </div>
             <div class="row">
                 <span class="form-label">Imagem</span>

@@ -38,6 +38,14 @@
                 <textarea class="form-control" name="description"></textarea>
             </div>
             <div class="row">
+                <span class="form-label">Tags</span>
+                <select class="form-select" name="tags[]" multiple>
+                 @foreach($tags as $tag)
+              <option value="{{$tag->id}}">{{$tag->name}}</option>
+                 @endforeach
+            </select>
+            </div>
+            <div class="row">
                 <span class="form-label">Imagem</span>
                 <input type="file" class="form-control" name="image">
             </div>

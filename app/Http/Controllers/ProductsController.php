@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Tag;
 
 
 class ProductsController extends Controller
@@ -16,7 +17,7 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        return view('product.create')->with('tags', Tag::all());
     }
 
     public function store(Request $request)
@@ -28,7 +29,7 @@ class ProductsController extends Controller
             $image = "storage/product/imagempadrao.png";
         }
 
-        Product::create([
+        $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'qtds' => $request->qtds,
@@ -36,13 +37,15 @@ class ProductsController extends Controller
             'type' => $request->type,
             'image' => $image
         ]);
+        $product->tags()->sync($request->tags);
+
         session()->flash('success', 'Produto foi cadastrado com sucesso!');
         return redirect(route('product.index'));
     }
 
     public function edit(Product $product)
     {
-        return view('product.edit')->with('product', $product);
+        return view('product.edit')->with(['product' => $product, 'tags' => Tag::all()]);
     }
 
     public function update(Request $request, Product $product)
@@ -64,6 +67,8 @@ class ProductsController extends Controller
             'type' => $request->type,
             'image' => $image
         ]);
+        $product->tags()->sync($request->tags);
+
         session()->flash('success', 'Produto foi alterado com sucesso!');
         return redirect(route('product.index'));
     }

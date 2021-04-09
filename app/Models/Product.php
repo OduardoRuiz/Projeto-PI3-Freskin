@@ -12,4 +12,9 @@ class Product extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = ['name', 'type', 'price', 'qtds', 'description', 'image'];
+
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
 }
