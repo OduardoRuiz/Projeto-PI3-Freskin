@@ -14,7 +14,9 @@ class ProductsController extends Controller
     {
         return view('product.index')->with('products', Product::all());
     }
-
+    public function show(Product $product){
+        return view('product.show')->with('product', $product);
+    }
     public function create()
     {
         return view('product.create')->with('tags', Tag::all());

@@ -16,7 +16,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+
 Route::group(['middleware' => 'isAdmin'], function () {
-    Route::resource('/product', ProductsController::class);
-    Route::resource('/tag', TagsController::class);
+    Route::resource('/product', ProductsController::class, ['except' => [ 'show']]);
+    Route::resource('/tag', TagsController::class)->middleware(['auth']);
 });
+Route::resource('/product', ProductsController::class, ['only'=> ['show']]);

@@ -17,6 +17,9 @@ class TagsController extends Controller
     {
         return view('tag.create');
     }
+    public function show (Tag $tag) {
+        return view('tag.show');
+    }
 
     public function store(Request $request)
     {
