@@ -5,7 +5,7 @@
 <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('/') }}">Freskin</a></li>
-                <li class="breadcrumb-item"><a href="#">{{ $product->tag}}</a></li>
+                <li class="breadcrumb-item"><a href="#">{{ $product->type}}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
         </nav>
         <div class="row">
