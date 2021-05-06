@@ -39,8 +39,17 @@
                 <span class="form-label">Descrição</span>
                 <textarea class="form-control" name="description">{{ $product->description }}</textarea>
             </div>
+            <div class="row mt-1">
 
-            <div class="row">
+                <span class="form-label">Promoção</span>
+                <select name="spotlight" class="form-select" aria-label="Default select example">
+                    <option selected>Deseja Colocar o produto em destaque ?</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+            </div>
+            <div class="row mt-1">
                 <span class="form-label">Tags</span>
                 <select class="form-select" name="tags[]" multiple>
                     @foreach($tags as $tag)

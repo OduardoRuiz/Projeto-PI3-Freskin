@@ -20,9 +20,13 @@
                 <span class="form-label">Tipo</span>
                 <select name="type" class="form-select" aria-label="Default select example">
                     <option selected>Selecione uma opção</option>
-                    <option value="fruta">Fruta</option>
-                    <option value="verdura">Verdura</option>
-                    <option value="legume">Legume</option>
+                    <option value="Fruta">Fruta</option>
+                    <option value="Verdura">Verdura</option>
+                    <option value="Legume">Legume</option>
+                    <option value="Vegetal">Vegetal</option>
+                    <option value="Hortaliça">Hortaliça</option>
+
+
                 </select>
             </div>
             <div class="row">
@@ -37,13 +41,25 @@
                 <span class="form-label">Descrição</span>
                 <textarea class="form-control" name="description"></textarea>
             </div>
+
+            <div class="row mt-1">
+
+                <span class="form-label">Promoção</span>
+                <select name="spotlight" class="form-select" aria-label="Default select example">
+                    <option selected>Deseja Colocar o produto em destaque ?</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+            </div>
+
             <div class="row">
                 <span class="form-label">Tags</span>
                 <select class="form-select" name="tags[]" multiple>
-                 @foreach($tags as $tag)
-              <option value="{{$tag->id}}">{{$tag->name}}</option>
-                 @endforeach
-            </select>
+                    @foreach($tags as $tag)
+                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="row">
                 <span class="form-label">Imagem</span>

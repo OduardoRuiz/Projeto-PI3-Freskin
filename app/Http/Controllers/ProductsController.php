@@ -14,7 +14,8 @@ class ProductsController extends Controller
     {
         return view('product.index')->with('products', Product::all());
     }
-    public function show(Product $product){
+    public function show(Product $product)
+    {
         return view('product.show')->with('product', $product);
     }
     public function create()
@@ -37,6 +38,7 @@ class ProductsController extends Controller
             'qtds' => $request->qtds,
             'price' => $request->price,
             'type' => $request->type,
+            'spotlight' => $request->spotlight,
             'image' => $image
         ]);
         $product->tags()->sync($request->tags);

@@ -11,10 +11,15 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['name', 'type', 'price', 'qtds', 'description', 'image'];
+    protected $fillable = ['name', 'type', 'price', 'qtds', 'description', 'image', 'spotlight'];
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class);
     }
 
+    public static function destaques()
+    {
+        return Product::all()->take(5);
+    }
 }

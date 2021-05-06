@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class AddSpotlightTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('type');
-            $table->decimal('qtds');
-            $table->decimal('price', 9, 2);
-            $table->string('description');
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('spotlight');
         });
     }
 
-    /*
+    /**
      * Reverse the migrations.
      *
      * @return void

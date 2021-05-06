@@ -9,7 +9,7 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/dashboard', function () {
@@ -19,7 +19,7 @@ Route::get('/dashboard', function () {
 
 
 Route::group(['middleware' => 'isAdmin'], function () {
-    Route::resource('/product', ProductsController::class, ['except' => [ 'show']]);
+    Route::resource('/product', ProductsController::class, ['except' => ['show']]);
     Route::resource('/tag', TagsController::class)->middleware(['auth']);
 });
-Route::resource('/product', ProductsController::class, ['only'=> ['show']]);
+Route::resource('/product', ProductsController::class, ['only' => ['show']]);
