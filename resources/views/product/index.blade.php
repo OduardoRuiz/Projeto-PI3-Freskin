@@ -50,7 +50,7 @@
                         <td>{{ $prod->description }}</td>
 
                         <td>
-                            <a href="#" class="btn btn-sm btn-success">Visualizar</a>
+                            <a href="{{ route('product.show', $prod->id) }}" class="btn btn-sm btn-success">Visualizar</a>
                             <a href="{{ route('product.edit', $prod->id) }}" class="btn btn-sm btn-warning">Editar</a>
                             <form method="POST" action="{{route('product.destroy', $prod->id)}}" class="d-inline">
                                 @method('DELETE')

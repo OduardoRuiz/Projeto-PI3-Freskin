@@ -16,18 +16,35 @@
                 <span class="form-label">Nome</span>
                 <input type="text" name="name" class="form-control">
             </div>
-            <div class="row">
+            
+            <div>
                 <span class="form-label">Tipo</span>
-                <select name="type" class="form-select" aria-label="Default select example">
-                    <option selected>Selecione uma opção</option>
-                    <option value="Fruta">Fruta</option>
-                    <option value="Verdura">Verdura</option>
-                    <option value="Legume">Legume</option>
-                    <option value="Vegetal">Vegetal</option>
-                    <option value="Hortaliça">Hortaliça</option>
+                <div>
+                    <input class="form-check-input" type="radio" name="type" value="Fruta">
+                    <label class="form-check-label" for="type">
+                    Fruta
+                    </label>
 
+                    <input class="form-check-input" type="radio" name="type" value="Verdura">
+                    <label class="form-check-label" for="type">
+                    Verdura
+                    </label>
 
-                </select>
+                    <input class="form-check-input" type="radio" name="type" value="Legume">
+                    <label class="form-check-label" for="type">
+                    Legume
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Vegetal">
+                    <label class="form-check-label" for="type">
+                    Vegetal
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Hortaliça">
+                    <label class="form-check-label" for="type">
+                    Hortaliça
+                    </label>
+                </div>
             </div>
             <div class="row">
                 <span class="form-label">Quantidade</span>
@@ -42,15 +59,19 @@
                 <textarea class="form-control" name="description"></textarea>
             </div>
 
-            <div class="row mt-1">
-
+            <div class="row">
                 <span class="form-label">Promoção</span>
-                <select name="spotlight" class="form-select" aria-label="Default select example">
-                    <option selected>Deseja Colocar o produto em destaque ?</option>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
+                <div>
+                    <input class="form-check-input" type="radio" name="spotlight" value="sim">
+                    <label class="form-check-label" for="spotlight">
+                    Sim
+                    </label>
 
+                    <input class="form-check-input" type="radio" name="spotlight" value="não">
+                    <label class="form-check-label" for="spotlight">
+                    Não
+                    </label>
+                </div>
             </div>
 
             <div class="row">

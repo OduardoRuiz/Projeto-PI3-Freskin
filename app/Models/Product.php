@@ -20,6 +20,6 @@ class Product extends Model
 
     public static function destaques()
     {
-        return Product::all()->take(5);
+        return Product::where('spotlight','sim')->get();
     }
 }

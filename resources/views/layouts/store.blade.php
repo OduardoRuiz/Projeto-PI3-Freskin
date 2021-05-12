@@ -14,6 +14,12 @@
         .bg-warning {
             background-color: rgb(247, 247, 74) !important;
         }
+        .row{
+            flex-wrap: nowrap !important;
+        }
+        .col-lg-3{
+            width: 24%;
+        }
     </style>
 
 
@@ -59,8 +65,8 @@
         @yield('content')
 
     </main>
-    <footer class="container p-5 bg-warning text-dark mt-2">
-        <div class="row">
+    <footer class="p-5 bg-warning text-dark mt-2 ">
+        <div class="d-flex">
             <div class="col-4 mb-5 ">
                 <h2 class="h4 ">Localização:</h2>
                 <address>Avenida Freskin <br>
@@ -68,7 +74,6 @@
                     CEP: 0000-000<br>
                     Telefone: (11) 0000-0000 <br>
                     <a class="text-dark" href="https://wa.me/message/R5XERYN6P4GOK1" target="_blank ">Whatsapp: (11) 96832-6278</a>
-
                 </address>
             </div>
             <div class="col-4">
@@ -81,7 +86,7 @@
                 <span class="h6">Nos siga em nossas redes sociais</span>
                 <div class="d-flex mt-2 ml-5">
 
-                    <a href="#" target="_blank "><i class="fab fa-instagram fa-2x ml-4 text-dark"></i></a>
+                    <a href="#" target="_blank "><i class="fab fa-instagram fa-2x ml-4 text-dark"></i><a>
                     <a href="#" target="_blank "><i class="fab fa-facebook-square fa-2x ml-4 text-dark"></i><a>
 
                 </div>

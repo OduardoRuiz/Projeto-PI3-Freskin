@@ -23,25 +23,8 @@
 
 @section('content')
 
-<section id="banner" class="d-flex align-items-center p-4">
-
-    <div>
-        <span class="h2 d-block text-capitalize">Sábado é dia de feira no Freskin</span>
-        <span class="h1 d-block text-uppercase fw-bold mb-3">Tudo Fresquinho para você, aproveite!</span>
-        <button class="btn btn-md btn-primary">Veja nossos produtos</button>
-
-    </div>
-
-</section>
-<section>
-    <div class="row">
-        <div class="text-center my-2">
-            <h2>Produtos Direto da Horta</h2>
-            <span class="text-muted">Nossos produtos são escolhidos com todo carinho e nossos fornecedores são escolhidos de forma criteriosa para melhor atende-lo atende-lo</span>
-
-        </div>
-    </div>
-    @foreach(\App\Models\Product::destaques() as $product)
+<h1>aquiiii</h1>
+    @foreach($tipos as $product)
 
     <div class="col-lg-3 col-md-6 col-sm-10 d-inline-block">
         <div class="text-center cardimg" style="height: 150px">

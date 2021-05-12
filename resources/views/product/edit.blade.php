@@ -17,14 +17,39 @@
                 <span class="form-label">Nome</span>
                 <input type="text" name="name" class="form-control" value="{{ $product->name }}">
             </div>
-            <div class="row">
+            <div>
                 <span class="form-label">Tipo</span>
-                <select name="type" class="form-select" aria-label="Default select example">
-                    <option selected>Selecione uma opção</option>
-                    <option value="fruta">Fruta</option>
-                    <option value="verdura">Verdura</option>
-                    <option value="legume">Legume</option>
-                </select>
+                <div>
+                    <input class="form-check-input" type="radio" name="type" value="Fruta"
+                    <?php echo $product->type=='Fruta'?"checked":" ";?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                    Fruta
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Verdura"
+                    <?php echo $product->type=='Verdura'?"checked":" ";?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                    Verdura
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Legume"
+                    <?php echo $product->type=='Legume'?"checked":" ";?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                    Legume
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Vegetal"
+                    <?php echo $product->type=='Vegetal'?"checked":" ";?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                    Vegetal
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Hortaliça"
+                    <?php echo $product->type=='Hortaliça'?"checked":" ";?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                    Hortaliça
+                    </label>
+                </div>
             </div>
             <div class="row">
                 <span class="form-label">Quantidade</span>
@@ -39,14 +64,21 @@
                 <span class="form-label">Descrição</span>
                 <textarea class="form-control" name="description">{{ $product->description }}</textarea>
             </div>
-            <div class="row mt-1">
-
+            <div class="row ">
                 <span class="form-label">Promoção</span>
-                <select name="spotlight" class="form-select" aria-label="Default select example">
-                    <option selected>Deseja Colocar o produto em destaque ?</option>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
+                <div>
+                    <input class="form-check-input" type="radio" name="spotlight" value="sim"
+                    <?php echo $product->spotlight=='sim'?"checked":" ";?>>
+                    <label class="form-check-label" for="spotlight">
+                    Sim
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="spotlight" value="não"
+                    <?php echo $product->type=='não'?"checked":" ";?>>
+                    <label class="form-check-label" for="spotlight">
+                    Não
+                    </label>
+                </div>
 
             </div>
             <div class="row mt-1">

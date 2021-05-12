@@ -83,4 +83,13 @@ class ProductsController extends Controller
         session()->flash('success', 'Produto foi apagado com sucesso!');
         return redirect(route('product.index'));
     }
+
+    public function type($product)
+    {
+        return view('type')->with( ['tipos' =>Product::where('type',$product)->get()]);
+    }
+        
+        
+    
+
 }
