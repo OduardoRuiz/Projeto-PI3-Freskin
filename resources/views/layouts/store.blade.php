@@ -51,6 +51,7 @@
                         <input class="form-control me-2 " size="70" type="search" placeholder="Pesquisar" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                     </form>
+                    <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{\App\Models\Cart::count() }})</a>
                 </div>
         </nav>
         </div>

@@ -23,7 +23,7 @@
 
 @section('content')
 
-<h1>aquiiii</h1>
+
     @foreach($tipos as $product)
 
     <div class="col-lg-3 col-md-6 col-sm-10 d-inline-block">
@@ -40,10 +40,10 @@
             </div>
 
         </div>
-        
+
     </div>
     @endforeach
-    
+
 </section>
 
 @endsection

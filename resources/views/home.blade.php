@@ -52,15 +52,15 @@
             <span class="d-block">R$ {{$product->price}}</span>
             <div class="mt-2">
                 <a href="{{route('product.show', $product->id) }}" class="btn btn-secondary">Visualizar</a>
-                <a href="#" class="btn btn-primary">Comprar</a>
+                <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary">Comprar</a>
 
             </div>
 
         </div>
-        
+
     </div>
     @endforeach
-    
+
 </section>
 
 @endsection
