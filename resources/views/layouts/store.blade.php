@@ -47,9 +47,9 @@
                             <a class="nav-link" href="#">Conheça a Freskin</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2 " size="70" type="search" placeholder="Pesquisar" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                    <form class="d-flex" method="get" action="{{ route('search') }}">
+                        <input class="form-control me-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search" >
+                        <button class="btn btn-outline-success" type="submit" >Pesquisar</button>
                     </form>
                     <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{\App\Models\Cart::count() }})</a>
                 </div>

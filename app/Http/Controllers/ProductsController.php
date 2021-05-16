@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Tag;
-
+use Illuminate\Support\Facades\Redirect;
 
 class ProductsController extends Controller
 {
@@ -88,8 +88,11 @@ class ProductsController extends Controller
     {
         return view('type')->with( ['tipos' =>Product::where('type',$product)->get()]);
     }
-        
-        
     
+    public function search(Request $request)
+    {
+      $search = $request->input('search');
+      return view('type')->with( ['tipos' =>Product::where('name','LIKE',"%{$search}%")->get()]);
+    }
 
 }

@@ -31,3 +31,4 @@ Route::group(['middleware' => 'auth'], function(){
 Route::resource('/product', ProductsController::class, ['only' => ['show']]);
 
 Route::get('/{product}',[ProductsController::class, 'type']);
+Route::get('/search/k/', [ProductsController::class, 'search'])->name('search');
