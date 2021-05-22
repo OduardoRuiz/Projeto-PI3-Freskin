@@ -51,7 +51,17 @@
                         <input class="form-control me-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search" >
                         <button class="btn btn-outline-success" type="submit" >Pesquisar</button>
                     </form>
-                    <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{\App\Models\Cart::count() }})</a>
+               <!--Agora login e registrar aparecem na tela home, e nome de usuario aparece quando esta logado até linha 63-->
+
+                    <div class="navbar-nav ms-auto">
+                        @if(Auth()->user())
+                        <span class="nav-link">{{Auth()->user()->name}}</span>
+                        <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{\App\Models\Cart::count() }})</a>
+                        @else
+                        <a class="nav-link" href="{{route('register') }}">Registrar</a>
+                        <a class="nav-link" href="{{route('login') }}">Logar</a>
+                         @endif
+                    </div>
                 </div>
         </nav>
         </div>

@@ -22,11 +22,12 @@
                 <td><a href="{{ route('product.show', $item->product()->id)}}">{{$item->product()->name}}</a></td>
                 <td><span>{{$item->quantity}}</span></td>
                 <td>
-                    <a href="{{ route('cart.add', $item->product()->id) }}" class="btn btn btn-success">+</a>
-                    <a href="{{ route('cart.remove',$item->product()->id) }}" class="btn btn btn-warning">-</a>
+                <a href="{{ route('cart.remove',$item->product()->id) }}" class="btn btn btn-warning">-</a>
+                <a href="{{ route('cart.add', $item->product()->id) }}" class="btn btn btn-success">+</a>
                 </td>
                 <td>
-                    <span>R$ {{ $item ->product()->price * $item->quantity }} (R$ {{ $item->product()->price}})</span>
+                <!--Corrigido formatação dos numeros linha 30-->
+                    <span>R$ {{ number_format ($item ->product()->price * $item->quantity, 2, ',' , '.') }} (R$ {{ $item->product()->price}})</span>
                     @php
                     $total += $item->product()->price *$item->quantity;
                     @endphp
@@ -37,8 +38,8 @@
     </table>
 </div>
 <div class="d-flex flex-colym flex-wrap align-items-end">
-    <span class="h3 max-5">Total da compra: R$ {{$total}}</span>
-    <a href="#" class="btn btn-lg btn-primary mx-2"> Ir para pagamento</a>
+    <span class="h3 max-5">Total da compra: R$ {{ number_format($total, 2, ',' , '.') }}</span>
+    <a href="{{route('cart.payment')}}" class="btn btn-lg btn-primary mx-2"> Ir para pagamento</a>
 </div>
 
 @endsection

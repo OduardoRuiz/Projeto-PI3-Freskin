@@ -49,6 +49,11 @@ class CartsController extends Controller
     }
     public function show(){
        $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
-       return view('cart.show')->with('cart', $cart ); 
+       return view('cart.show')->with('cart', $cart );
     }
+
+    public function payment(){
+        $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
+        return view('cart.payment')->with('cart', $cart );
+     }
 }

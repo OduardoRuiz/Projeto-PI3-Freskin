@@ -14,7 +14,26 @@ class Cart extends Model
     public function product(){
         return Product::where('id', '=', $this->product_id)->first();
     }
+
+    //função alterada, para contar os itens no icone do carrinho e na quantidade de produtos(tela pagamento)
     public static function count(){
-        return Cart::where('user_id', '=', Auth()->user()->id)->count();
+        $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
+        $total = 0;
+        foreach($cart as $item){
+            $total += $item->quantity;
+        }
+        return $total;
+    }
+
+
+    //função para capturar o valor total da compra, usada na view payment
+    public static function totalValue(){
+        $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
+        $total = 0;
+        foreach($cart as $item){
+            $total += $item->product()->price * $item->quantity;
+        }
+        return $total;
+
     }
 }
