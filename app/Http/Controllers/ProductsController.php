@@ -36,6 +36,7 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'qtds' => $request->qtds,
+            'unidadeMedida' => $request->unidadeMedida,
             'price' => $request->price,
             'type' => $request->type,
             'spotlight' => $request->spotlight,
@@ -67,8 +68,10 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'qtds' => $request->qtds,
+            'unidadeMedida' => $request->unidadeMedida,
             'price' => $request->price,
             'type' => $request->type,
+            'spotlight' => $request->spotlight,
             'image' => $image
         ]);
         $product->tags()->sync($request->tags);
@@ -94,5 +97,13 @@ class ProductsController extends Controller
       $search = $request->input('search');
       return view('type')->with( ['tipos' =>Product::where('name','LIKE',"%{$search}%")->get()]);
     }
-
+    public function products(Request $request)
+    {
+        return view('type')->with( ['tipos' =>Product::all()]);
+    }
+    public function sobre(Request $request)
+    {
+        return view('sobre');
+    }
+    
 }

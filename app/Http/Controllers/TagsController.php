@@ -48,4 +48,5 @@ class TagsController extends Controller
         session()->flash('success', 'Tag foi alterada com sucesso!');
         return redirect(route('tag.index'));
     }
+    
 }

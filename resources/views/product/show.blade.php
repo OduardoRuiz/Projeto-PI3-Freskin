@@ -16,7 +16,10 @@
     <div class="col-6 text-center">
         <h2>{{ $product->name}}</h2>
         <p class="my-3">{{ $product->description }}</p>
-        <span class="h4 d-block my-3">R$ {{$product->price }}</span>
+        <div >
+        <span class="h4 my-3">R$ {{$product->price }}</span>
+        <span>({{$product->unidadeMedida }})</span>
+        </div>
         <a href="{{ route('cart.add', $product->id) }}" class="btn btn-success my-1">Adicionar ao carrinho</a>
         <!--<div class="d-block">
                     @foreach($product->tags as $tag)

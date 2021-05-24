@@ -7,44 +7,46 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Address;
 
 class OrderController extends Controller
 {
 
-    public function add(Request $request) {
+    public function add(Request $request)
+    {
 
-    $cart = Cart::where('user_id', '=', Auth()->user()->id)->get();
+        $cart = Cart::where('user_id', '=', Auth()->user()->id)->get();
+        $address = Address::where('user_id', '=', Auth()->user()->id)->first();
 
+        $order = Order::create([
 
-$order = Order::create([
-
-        'user_id' =>Auth()->user()->id,
-        'status'=> 'Processando',
-     /**Necessario implementar aqui o endereço do usuario*/
-        'address' => 'Rua Freskin',
-        'address_number' => '130',
-        'address_city' => 'São Paulo',
-        'address_state' =>'SP',
-        'cc_number' => substr($request->cc_card, -4),
-    ]);
-
-    foreach($cart as $item){
-        OrderItem::create([
-            'order_id' => $order->id,
-            'product_id' => $item->product_id,
-            'qtds' => $item->quantity,
-            'price' => $item->product()->price,
-
+            'user_id' => Auth()->user()->id,
+            'status' => 'Processando',
+            /**Necessario implementar aqui o endereço do usuario*/
+            'address' => $address-> address,
+            'address_number' => $address-> address_number,
+            'address_city' => $address-> address_city,
+            'address_state' => $address-> address_state,
+            'cc_number' => substr($request->cc_card, -4),
         ]);
-/**deleta o item no carrinho apos fechar comprar */
-        $item->delete();
 
+        foreach ($cart as $item) {
+            OrderItem::create([
+                'order_id' => $order->id,
+                'product_id' => $item->product_id,
+                'qtds' => $item->quantity,
+                'price' => $item->product()->price,
+
+            ]);
+            /**deleta o item no carrinho apos fechar comprar */
+            $item->delete();
+        }
+
+        return redirect(route('order.show'));
     }
 
-    return redirect(route('order.show'));
-}
-
-public function show(){
-    return view('order.show');
-}
+    public function show()
+    {
+        return view('order.show');
+    }
 }

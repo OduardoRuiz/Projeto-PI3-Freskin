@@ -4,14 +4,17 @@
 <div class="row justify-content-center">
     <div class="col-md-6 col-10 my-4 p-3">
         <h3>Endereço de entrega</h3>
+        @foreach(\App\Models\Address::where('user_id','=', Auth()->user()->id)->get() as $endereco)
         <address class="ms-3">
             <!--Implementar aqui para puxar o endereço de usuario cadastrado-->
-            Rua Precisa Implementar, 404<br>
-            São Paulo, SP<br>
-            CEP: 01214-100<br>
-            Brasil
+           
+            <p>Endereço: {{$endereco->address}}, {{$endereco->address_number}}, {{$endereco->neighborhood}} </p>
+            <p> Cidede: {{$endereco->address_city}}, {{$endereco->address_state}}</p>
+            <p>Cep: {{$endereco->cep}}</p>
+    
         </address>
-        <a href="#" class="float-end me-4">Trocar o endereço</a>
+        @endforeach
+        <a href="{{ route('user.profile', Auth()->user()->id) }}" class="float-end me-4">Trocar o endereço</a>
     </div>
 
     <div class="col-md-6 col-10 bg-light my-4">

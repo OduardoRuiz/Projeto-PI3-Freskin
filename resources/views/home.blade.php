@@ -28,7 +28,7 @@
     <div>
         <span class="h2 d-block text-capitalize">Sábado é dia de feira no Freskin</span>
         <span class="h1 d-block text-uppercase fw-bold mb-3">Tudo Fresquinho para você, aproveite!</span>
-        <button class="btn btn-md btn-primary">Veja nossos produtos</button>
+        <a class="btn btn-md btn-primary" href="{{ route('products') }}">Veja nossos produtos</a>
 
     </div>
 
@@ -60,6 +60,7 @@
 
     </div>
     @endforeach
+    
 
 </section>
 

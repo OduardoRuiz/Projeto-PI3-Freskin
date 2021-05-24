@@ -14,11 +14,18 @@
         .bg-warning {
             background-color: rgb(247, 247, 74) !important;
         }
-        .row{
+
+        .row {
             flex-wrap: nowrap !important;
         }
-        .col-lg-3{
+
+        .col-lg-3 {
             width: 24%;
+        }
+
+        #logo {
+            width: 50px;
+            height: 50px;
         }
     </style>
 
@@ -28,8 +35,12 @@
 <body>
     <header>
 
+
         <nav class="navbar navbar-expand-md navbar-light bg-warning">
             <div class="container">
+                <div class="">
+                    <img id="logo" src="{{ asset('imagens/logo.png') }}" />
+                </div>
                 <a class="navbar-brand" href="{{ url('/') }}">Hortifruti Freskin</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -38,35 +49,60 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Início</a>
+                            <a class="nav-link" href="{{ url('/') }}">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('product.index')}}">Produtos</a>
+                            <a class="nav-link" href="{{ route('products') }}">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Conheça a Freskin</a>
+                            <a class="nav-link" href="{{ route('sobre') }}">Conheça a Freskin</a>
                         </li>
                     </ul>
                     <form class="d-flex" method="get" action="{{ route('search') }}">
-                        <input class="form-control me-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search" >
-                        <button class="btn btn-outline-success" type="submit" >Pesquisar</button>
+                        <input class="form-control me-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                     </form>
-               <!--Agora login e registrar aparecem na tela home, e nome de usuario aparece quando esta logado até linha 63-->
+                    <!--Agora login e registrar aparecem na tela home, e nome de usuario aparece quando esta logado até linha 63-->
 
                     <div class="navbar-nav ms-auto">
                         @if(Auth()->user())
-                        <span class="nav-link">{{Auth()->user()->name}}</span>
-                        <a class="nav-link" href="{{ route('cart.show') }}">Carrinho ({{\App\Models\Cart::count() }})</a>
+
+                        <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}">Bem vindo {{Auth()->user()->name}}</a>
+
+
+                        <a class="nav-link " href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart fa-2x ml-4 text-dark"></i> ({{\App\Models\Cart::count() }})</a>
+                        <div class="mt-3 space-y-1">
+                            <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <a href="route('logout')" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                    Sair
+
+                                </a>
+                            </form>
+                            @if(Auth()->user()->isAdmin == 1)
+                            <div>
+                                <a href="{{url('/product') }}">Painel de Controle</a>
+                            </div>
+                            @endif
+                        </div>
                         @else
                         <a class="nav-link" href="{{route('register') }}">Registrar</a>
                         <a class="nav-link" href="{{route('login') }}">Logar</a>
-                         @endif
+
+                        @endif
+
                     </div>
                 </div>
+
         </nav>
         </div>
     </header>
     <main class="container my-4">
+
+
         @if(session()->has('success'))
         <div class="alert alert-success" role="alert">{{ session()->get ('success')}}</div>
         @endif
@@ -98,7 +134,7 @@
                 <div class="d-flex mt-2 ml-5">
 
                     <a href="#" target="_blank "><i class="fab fa-instagram fa-2x ml-4 text-dark"></i><a>
-                    <a href="#" target="_blank "><i class="fab fa-facebook-square fa-2x ml-4 text-dark"></i><a>
+                            <a href="#" target="_blank "><i class="fab fa-facebook-square fa-2x ml-4 text-dark"></i><a>
 
                 </div>
             </div>

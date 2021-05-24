@@ -16,39 +16,63 @@
                 <span class="form-label">Nome</span>
                 <input type="text" name="name" class="form-control">
             </div>
-            
+
             <div>
                 <span class="form-label">Tipo</span>
                 <div>
                     <input class="form-check-input" type="radio" name="type" value="Fruta">
                     <label class="form-check-label" for="type">
-                    Fruta
+                        Fruta
                     </label>
 
                     <input class="form-check-input" type="radio" name="type" value="Verdura">
                     <label class="form-check-label" for="type">
-                    Verdura
+                        Verdura
                     </label>
 
                     <input class="form-check-input" type="radio" name="type" value="Legume">
                     <label class="form-check-label" for="type">
-                    Legume
+                        Legume
                     </label>
 
                     <input class="form-check-input" type="radio" name="type" value="Vegetal">
                     <label class="form-check-label" for="type">
-                    Vegetal
+                        Vegetal
                     </label>
 
                     <input class="form-check-input" type="radio" name="type" value="Hortaliça">
                     <label class="form-check-label" for="type">
-                    Hortaliça
+                        Hortaliça
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Outros">
+                    <label class="form-check-label" for="type">
+                        Outros
                     </label>
                 </div>
             </div>
             <div class="row">
                 <span class="form-label">Quantidade</span>
                 <input type="number" min="0" max="1000000" name="qtds" class="form-control">
+            </div>
+            <div class="row">
+                <span class="form-label">Unidade de Medida</span>
+                <div>
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Kl">
+                    <label class="form-check-label" for="unidadeMedida">
+                        Kilo
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Gr">
+                    <label class="form-check-label" for="unidadeMedida">
+                        Gramas
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Un">
+                    <label class="form-check-label" for="unidadeMedida">
+                        Unidade
+                    </label>
+                </div>
             </div>
             <div class="row">
                 <span class="form-label">Preço</span>
@@ -64,12 +88,12 @@
                 <div>
                     <input class="form-check-input" type="radio" name="spotlight" value="sim">
                     <label class="form-check-label" for="spotlight">
-                    Sim
+                        Sim
                     </label>
 
                     <input class="form-check-input" type="radio" name="spotlight" value="não">
                     <label class="form-check-label" for="spotlight">
-                    Não
+                        Não
                     </label>
                 </div>
             </div>

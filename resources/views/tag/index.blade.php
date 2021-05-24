@@ -37,7 +37,7 @@
                         <td>{{ $tag->name }}</td>
 
                         <td>
-                            <a href="#" class="btn btn-sm btn-success">Visualizar</a>
+                        
                             <a href="{{ route('tag.edit', $tag->id) }}" class="btn btn-sm btn-warning">Editar</a>
 
                             <form method="POST" action="{{route('tag.destroy', $tag->id)}}" class="d-inline">

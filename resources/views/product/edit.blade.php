@@ -20,40 +20,59 @@
             <div>
                 <span class="form-label">Tipo</span>
                 <div>
-                    <input class="form-check-input" type="radio" name="type" value="Fruta"
-                    <?php echo $product->type=='Fruta'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="type" value="Fruta" <?php echo $product->type == 'Fruta' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="flexRadioDisabled">
-                    Fruta
+                        Fruta
                     </label>
 
-                    <input class="form-check-input" type="radio" name="type" value="Verdura"
-                    <?php echo $product->type=='Verdura'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="type" value="Verdura" <?php echo $product->type == 'Verdura' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="flexRadioDisabled">
-                    Verdura
+                        Verdura
                     </label>
 
-                    <input class="form-check-input" type="radio" name="type" value="Legume"
-                    <?php echo $product->type=='Legume'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="type" value="Legume" <?php echo $product->type == 'Legume' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="flexRadioDisabled">
-                    Legume
+                        Legume
                     </label>
 
-                    <input class="form-check-input" type="radio" name="type" value="Vegetal"
-                    <?php echo $product->type=='Vegetal'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="type" value="Vegetal" <?php echo $product->type == 'Vegetal' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="flexRadioDisabled">
-                    Vegetal
+                        Vegetal
                     </label>
 
-                    <input class="form-check-input" type="radio" name="type" value="Hortaliça"
-                    <?php echo $product->type=='Hortaliça'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="type" value="Hortaliça" <?php echo $product->type == 'Hortaliça' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="flexRadioDisabled">
-                    Hortaliça
+                        Hortaliça
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="type" value="Outros" <?php echo $product->type == 'Outros' ? "checked" : " "; ?>>
+                    <label class="form-check-label" for="flexRadioDisabled">
+                        Outros
                     </label>
                 </div>
             </div>
             <div class="row">
                 <span class="form-label">Quantidade</span>
                 <input type="number" min="0" max="1000000" name="qtds" value="{{ $product->qtds }}" class="form-control">
+            </div>
+            <div class="row">
+                <span class="form-label">Unidade de Medida</span>
+                <div>
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Kl" <?php echo $product->unidadeMedida == 'Kl' ? "checked" : " "; ?>>
+                    <label class="form-check-label" for="unidadeMedida">
+                        Kilo
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Gr" <?php echo $product->unidadeMedida == 'Gr' ? "checked" : " "; ?>>
+                    <label class="form-check-label" for="unidadeMedida">
+                        Gramas
+                    </label>
+
+                    <input class="form-check-input" type="radio" name="unidadeMedida" value="Un" <?php echo $product->unidadeMedida == 'Un' ? "checked" : " "; ?>>
+                    <label class="form-check-label" for="unidadeMedida">
+                        Unidade
+                    </label>
+                </div>
             </div>
 
             <div class="row">
@@ -67,16 +86,14 @@
             <div class="row ">
                 <span class="form-label">Promoção</span>
                 <div>
-                    <input class="form-check-input" type="radio" name="spotlight" value="sim"
-                    <?php echo $product->spotlight=='sim'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="spotlight" value="sim" <?php echo $product->spotlight == 'sim' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="spotlight">
-                    Sim
+                        Sim
                     </label>
 
-                    <input class="form-check-input" type="radio" name="spotlight" value="não"
-                    <?php echo $product->type=='não'?"checked":" ";?>>
+                    <input class="form-check-input" type="radio" name="spotlight" value="não" <?php echo $product->spotlight == 'não' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="spotlight">
-                    Não
+                        Não
                     </label>
                 </div>
 

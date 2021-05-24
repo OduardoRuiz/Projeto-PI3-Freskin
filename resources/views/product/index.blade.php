@@ -45,7 +45,7 @@
                         <td><img src="{{ asset($prod->image) }}" style="width:45px"></td>
                         <td>{{ $prod->name }}</td>
                         <td>{{ $prod->type }}</td>
-                        <td>{{ $prod->qtds }}</td>
+                        <td>{{number_format($prod->qtds, 0, )  }}</td>
                         <td>{{ $prod->price }}</td>
                         <td>{{ $prod->description }}</td>
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -36,7 +37,13 @@ Route::group(['middleware' => 'auth'], function(){
     /**Rotas do pedido, uma para adicionar outra para mostrar */
     Route::post('/order/add', [OrderController::class, 'add'])->name('order.add');
     Route::get('/order', [OrderController::class, 'show'])->name('order.show');
+
+    Route::get('/profile/{id}', [ProfileController::class, 'profile'])->name('user.profile');
+    Route::post('/profile/add', [ProfileController::class, 'create'])->name('user.add');
 });
 Route::resource('/product', ProductsController::class, ['only' => ['show']]);
 Route::get('/{product}',[ProductsController::class, 'type']);
 Route::get('/search/k/', [ProductsController::class, 'search'])->name('search');
+Route::get('/products/produtos', [ProductsController::class, 'products'])->name('products');
+Route::get('/sobre/institucional', [ProductsController::class, 'sobre'])->name('sobre');
+

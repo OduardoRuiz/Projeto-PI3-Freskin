@@ -11,7 +11,7 @@ class Order extends Model
 
     use HasFactory;
 
-    protected $fillable = ['user_id', 'status', 'address', 'address_number', 'address_city', 'address_state', 'cc_number'];
+    protected $fillable = ['user_id', 'status', 'address', 'address_number', 'address_city', 'address_state', 'cc_number']; 
 
     public function items() {
 

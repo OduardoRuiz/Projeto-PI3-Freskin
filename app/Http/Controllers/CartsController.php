@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Address;
 
 class CartsController extends Controller
 {
@@ -54,6 +55,7 @@ class CartsController extends Controller
 
     public function payment(){
         $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
+
         return view('cart.payment')->with('cart', $cart );
      }
 }

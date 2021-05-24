@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['name', 'type', 'price', 'qtds', 'description', 'image', 'spotlight'];
+    protected $fillable = ['name', 'type', 'price', 'qtds','unidadeMedida', 'description', 'image', 'spotlight'];
 
     public function tags()
     {
