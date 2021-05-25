@@ -6,9 +6,12 @@
         @csrf
 
         <fieldset>
+            <div>
+                <img src="https://media.istockphoto.com/vectors/fruit-in-a-row-juicy-fruit-fruit-icons-in-modern-flat-design-isolated-vector-id1178032462?k=6&m=1178032462&s=170667a&w=0&h=aWKqKKiAerZMr8ZF4AdikSVm-LQN2rOkz4LBe637Qz0=" alt="frutas em uma fileira" class="frutas">
+            </div>
+
 
             <h3>Endereço</h3>
-
 
             <div>
                 <input type="text" value="{{Auth()->user()->id}}" name="user_id" style="display: none;">
@@ -16,11 +19,11 @@
                 @if($address != null)
 
                 @foreach($address as $endereco)
-                <label>
+                <label class="mb-3 mt-2">
                     Cep:
                 </label>
 
-                <input type="text" name="cep" id="cep" onblur="cadastro.cep.pesquisacep(this.value);" value="{{$endereco->cep}}" maxlength="9" onkeypress="soNumero(this.id)" required="required">
+                <input type="text" name="cep" id="cep" onblur="cadastro.cep.pesquisacep(this.value);" value="{{$endereco->cep}}" maxlength="9" onkeypress="soNumero(this.id)" required="required" class="form-control">
                 <span>
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -30,37 +33,38 @@
             </div>
 
             <div>
-                <label>
+                <label class="mb-3 mt-2">
                     Rua:
                 </label>
-                <input type="text" name="address" id="rua" style="width: 20em" value="{{$endereco->address}}">
+                <input type="text" name="address" id="rua" style="width: 20em" value="{{$endereco->address}}"  class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Nº:
                 </label>
-                <input type="text" name="address_number" id="numero" style="width: 5em" required="required" value="{{$endereco->address_number}}">
-
-                <label>
+                <input type="text" name="address_number" id="numero" style="width: 5em" required="required" value="{{$endereco->address_number}}"  class="form-control">
+            </div>
+            <div>
+                <label class="mb-3 mt-2">
                     Complemento:
                 </label>
-                <input type="text" name="complement" id="complemento" value="{{$endereco->complement}}">
+                <input type="text" name="complement" id="complemento" value="{{$endereco->complement}}"  class="form-control">
             </div>
 
             <div>
-                <label>
+                <label class="mb-3 mt-2">
                     Bairro:
                 </label>
-                <input type="text" name="neighborhood" id="bairro" value="{{$endereco->neighborhood}}">
+                <input type="text" name="neighborhood" id="bairro" value="{{$endereco->neighborhood}}"  class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Estado:
-                </label>
-                <input type="text" name="address_state" id="estado" style="width: 3em" value="{{$endereco->address_state}}">
+                </label class="mb-3 mt-2">
+                <input type="text" name="address_state" id="estado" style="width: 3em" value="{{$endereco->address_state}}"  class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Cidade:
                 </label>
-                <input type="text" name="address_city" id="cidade" value="{{$endereco->address_city}}">
+                <input type="text" name="address_city" id="cidade" value="{{$endereco->address_city}}"  class="form-control">
             </div>
 
         </fieldset>
@@ -69,10 +73,10 @@
             <h3>Contato</h3>
 
             <div>
-                <label>
+                <label class="mb-3 mt-2">
                     Telefone
                 </label>
-                <input type="text" name="contact" value="{{$endereco->contact}}">
+                <input type="text" name="contact" value="{{$endereco->contact}}"  class="form-control" id="telefone">
 
             </div>
             @endforeach
@@ -81,11 +85,11 @@
             $a = \App\Models\Address::where('user_id', '=', Auth()->user()->id)->first();
             @endphp
             @if($a == null)
-            <label>
+            <label class="mb-3 mt-2">
                 Cep:
             </label>
 
-            <input type="text" name="cep" id="cep" onblur="cadastro.cep.pesquisacep(this.value);" value="" maxlength="9" onkeypress="soNumero(this.id)" required="required">
+            <input type="text" name="cep" id="cep" onblur="cadastro.cep.pesquisacep(this.value);" value="" maxlength="9" onkeypress="soNumero(this.id)" required="required" class="form-control">
             <span>
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -95,37 +99,37 @@
             </div>
 
             <div>
-                <label>
+                <label class="mb-3 mt-2">
                     Rua:
                 </label>
-                <input type="text" name="address" id="rua" style="width: 20em" value="">
+                <input type="text" name="address" id="rua" value="" class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Nº:
                 </label>
-                <input type="text" name="address_number" id="numero" style="width: 5em" required="required" value="">
+                <input type="text" name="address_number" id="numero" required="required" value="" class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Complemento:
                 </label>
-                <input type="text" name="complement" id="complemento" value="">
+                <input type="text" name="complement" id="complemento" value="" class="form-control">
             </div>
 
             <div>
-                <label>
+                <label class="mb-3 mt-2">
                     Bairro:
                 </label>
-                <input type="text" name="neighborhood" id="bairro" value="">
+                <input type="text" name="neighborhood" id="bairro" value="" class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Estado:
                 </label>
-                <input type="text" name="address_state" id="estado" style="width: 3em" value="">
+                <input type="text" name="address_state" id="estado"  value="" class="form-control">
 
-                <label>
+                <label class="mb-3 mt-2">
                     Cidade:
                 </label>
-                <input type="text" name="address_city" id="cidade" value="">
+                <input type="text" name="address_city" id="cidade" value="" placeholder="" class="form-control">
             </div>
 
         </fieldset>
@@ -134,10 +138,10 @@
             <h3>Contato</h3>
 
             <div>
-                <label>
+                <label class="mb-3">
                     Telefone
                 </label>
-                <input type="text" name="contact" value="">
+                <input type="tel" id="telefone" name="contact" pattern="([0-9]{2})\s([9]{1})?([0-9]{4})-([0-9]{4})" class="form-control"  title="Digite seu telefone com DDD" required>
 
 
 
@@ -149,7 +153,7 @@
 
 
         <div>
-            <button type="submit">Cadastrar</button>
+            <button type="submit" class="mt-3 botaoCadastro">Cadastrar</button>
         </div>
 
         </fieldset>

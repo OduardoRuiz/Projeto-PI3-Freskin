@@ -1,0 +1,107 @@
+/* menu  -------------------------------------------------------------------------------*/
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: -30px;
+}
+.navbar-brand{
+    position: relative;
+    top: 20px;
+    margin-left: -80px;
+    line-height: 50px;
+}
+.navbar{
+    padding-bottom: 30px;
+}
+
+/* home -----------------------------------------------------------------------------------*/
+
+
+
+/* sobre a freskin ------------------------------------------------------------------------ */
+.institucional{
+    color: #77BC1E;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.sobreFreskin{
+    width: 70%;;
+}
+.gifBanana{
+    max-width: 200px;
+}
+.gifCoco{
+    max-width: 150px;
+}
+p, .institucional{
+    font-family: 'Raleway-Bold',sans-serif;
+}
+.linhaVegetais{
+    max-width: 600px;
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+/* castro do endereço -----------------------------------------------------------------------------*/
+.frutas{
+    width: 500px;
+    height: 100px;
+    margin: -20px;
+}
+.botaoCadastro {
+    background: #77BC1E;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-style: solid;
+    border-color: green;
+    border-radius: 10px;
+    transition: 1s all;
+    font-family: 'Raleway-Bold',sans-serif;
+}
+.botaoCadastro:hover {
+    background: green;
+    transform: scale(1.05);
+}
+#rua, #bairro, #cidade, #telefone, #complemento{
+    width: 25rem;
+    display: inline;
+}
+#cep  {
+    width: 10rem;
+    display: inline-block;
+}
+#numero, #estado{
+    width: 4rem;
+    display: inline;
+}
+
+/* footer --------------------------------------------------------------------------------------- */
+footer, nav{
+    background-color: rgb(247, 247, 74) ;
+}
+
+footer{
+    box-sizing: border-box;
+}
+.col-3{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+.col-lg-3{
+    width: 24%;
+}
+.row {
+    flex-wrap: nowrap;
+}
+.merchan {
+    max-width: 300px;
+
+}
+.vegan{
+    width: 150px;
+}
+
