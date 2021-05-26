@@ -1,24 +1,80 @@
+/* Login/Registro ------------------------------------------------------------------------*/
+
+
 /* menu  -------------------------------------------------------------------------------*/
 #logo {
-    width: 50px;
-    height: 50px;
-    margin-left: 30px;
-    margin-top: -30px;
-}
-.navbar-brand{
-    position: relative;
-    top: 20px;
-    margin-left: -80px;
-    line-height: 50px;
+    width: 150px;
+    height: 100px;
+    margin-left: 1rem;
 }
 .navbar{
     padding-bottom: 30px;
+    color: rgb(49, 49, 49);
+    font-family: 'Raleway-Bold',sans-serif;
 }
+.urlMenu{
+    display: inline;
+    color: rgba(0, 0, 0, 0.726);
+    margin-left: 1rem;
+}
+.carrinho{
+    margin-left: 2rem;
 
+}
+.urlMenu:link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.514);
+}
+#adm{
+    color: #2730C4;
+}
+.urlMenu:hover{
+   color: black;
+}
+.form-control{
+    min-width: 10rem;
+}
+.botaoPesquisar{
+    margin-left: 0.4rem;
+    margin-right: 2rem;
+}
+.sair{
+    margin-top: 0.5rem;
+}
+.imgCadastro{
+    width: 2rem;
+}
 /* home -----------------------------------------------------------------------------------*/
 
+#banner {
+    background: url('http://supergentil.com.br/blog/wp-content/uploads/2019/02/frutas-legumes-e-verduras-das-estacoes.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 400px;
+    opacity: 0.8;
 
+}
+.botaoHome{
+    background-color: #2730C4;
+    font-size: 18px;
+    color: white;
+}
 
+.cardimg img {
+    border: 0.5px solid gray;
+    border-radius: 0.5rem;
+    box-shadow: gray;
+}
+.homeFonte{
+    color: rgb(0, 0, 0);
+    font-family: 'Raleway-Bold',sans-serif;
+}
+
+/* produtos --------------------------------------------------------------------------------*/
+.produtoVis{
+    width:250px;
+}
 /* sobre a freskin ------------------------------------------------------------------------ */
 .institucional{
     color: #77BC1E;
@@ -73,13 +129,13 @@ p, .institucional{
     display: inline-block;
 }
 #numero, #estado{
-    width: 4rem;
     display: inline;
+    width: 0.5rem;
 }
 
 /* footer --------------------------------------------------------------------------------------- */
 footer, nav{
-    background-color: rgb(247, 247, 74) ;
+    background-color: rgb(247, 247, 74);
 }
 
 footer{

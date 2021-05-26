@@ -11,7 +11,7 @@
 </nav>
 <div class="row">
     <div class="col-6 texte-center">
-        <img src="{{ asset($product->image) }}" style="width:250px;">
+        <img src="{{ asset($product->image) }}" class="produtoVis">
     </div>
     <div class="col-6 text-center">
         <h2>{{ $product->name}}</h2>

@@ -18,11 +18,8 @@
 
 
             <nav class="navbar navbar-expand-md navbar-light ">
-                <div class="container">
-                    <div class="">
-                        <img id="logo" src="{{ asset('imagens/logo1.png') }}" />
-                    </div>
-                    <a class="navbar-brand" href="{{ url('/') }}">Hortifruti Freskin</a>
+
+                    <a class="navbar-brand" href="{{ url('/') }}"><img id="logo" src="{{ asset('imagens/logo1.png') }}" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -30,7 +27,7 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ url('/') }}">Início</a>
+                                <a class="nav-link" href="{{ url('/') }}">Início<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products') }}">Produtos</a>
@@ -39,47 +36,49 @@
                                 <a class="nav-link" href="{{ route('sobre') }}">Conheça a Freskin</a>
                             </li>
                         </ul>
-                        <form class="d-flex" method="get" action="{{ route('search') }}">
-                            <input class="form-control me-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                        <form class="form-inline d-flex " method="get" action="{{ route('search') }}">
+                            <input class="form-control mr-sm-2 " size="70" type="text" name="search" placeholder="Pesquisar" aria-label="Search">
+                            <button class="btn btn-outline-success botaoPesquisar " type="submit">Pesquisar</button>
                         </form>
                         <!--Agora login e registrar aparecem na tela home, e nome de usuario aparece quando esta logado até linha 63-->
 
-                        <div class="navbar-nav ms-auto">
+                        <div class="navbar-nav">
                             @if(Auth()->user())
 
-                            <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}">Bem vindo {{Auth()->user()->name}}</a>
+                            <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}"><img class="imgCadastro" src="https://img-premium.flaticon.com/png/512/747/747376.png?token=exp=1622002187~hmac=ef5b7907685d374f4989287e6d002737">Bem vindo {{Auth()->user()->name}}</a>
 
 
-                            <a class="nav-link " href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart fa-2x ml-4 text-dark"></i> ({{\App\Models\Cart::count() }})</a>
-                            <div class="mt-3 space-y-1">
+                            <a class="nav-link d-flex carrinho" href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart fa-2x ml-4 text-dark"></i> ({{\App\Models\Cart::count() }})</a>
+                            <div class=" space-y-1 sair">
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-
-                                    <a href="route('logout')" onclick="event.preventDefault();
+                                    <div >
+                                        <a class="urlMenu" href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
                                         Sair
 
                                     </a>
+                                    </div>
+
                                 </form>
                                 @if(Auth()->user()->isAdmin == 1)
                                 <div>
-                                    <a href="{{url('/product') }}">Painel de Controle</a>
+                                    <a class="urlMenu" id="adm" href="{{url('/product') }}">Painel de Controle</a>
                                 </div>
                                 @endif
                             </div>
                             @else
-                            <a class="nav-link" href="{{route('register') }}">Registrar</a>
-                            <a class="nav-link" href="{{route('login') }}">Logar</a>
+
+                            <a class="nav-link urlMenu " href="{{route('register') }}">Registrar</a>
+                            <a class="nav-link urlMenu" href="{{route('login') }}">Logar</a>
 
                             @endif
 
                         </div>
                     </div>
-
             </nav>
-            </div>
+
         </header>
         <main class="container my-4">
 

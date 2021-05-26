@@ -1,23 +1,6 @@
 @extends('layouts.store')
 @section('css')
 
-<style>
-    #banner {
-        background: url('https://via.placeholder.com/2000x800px;');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        min-height: 400px;
-
-    }
-
-    .cardimg img {
-        border: 0.5px solid gray;
-        border-radius: 0.5rem;
-        box-shadow: gray;
-    }
-</style>
-
 @endsection
 
 
@@ -26,9 +9,9 @@
 <section id="banner" class="d-flex align-items-center p-4">
 
     <div>
-        <span class="h2 d-block text-capitalize">Sábado é dia de feira no Freskin</span>
-        <span class="h1 d-block text-uppercase fw-bold mb-3">Tudo Fresquinho para você, aproveite!</span>
-        <a class="btn btn-md btn-primary" href="{{ route('products') }}">Veja nossos produtos</a>
+        <span class="h2 d-block text-capitalize homeFonte" >Sábado é dia de feira no Freskin</span>
+        <span class="h1 d-block text-uppercase fw-bold mb-3 homeFonte">Tudo Fresquinho para você, aproveite!</span>
+        <a class="btn btn-md botaoHome" href="{{ route('products') }}">Veja nossos produtos</a>
 
     </div>
 
@@ -60,7 +43,7 @@
 
     </div>
     @endforeach
-    
+
 
 </section>
 

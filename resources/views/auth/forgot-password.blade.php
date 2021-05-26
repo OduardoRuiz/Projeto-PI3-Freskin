@@ -2,12 +2,12 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img class="logoLogin" style="width: 20rem;" src="{{ asset('imagens/logo1.png') }}" />
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Esqueceu sua senha? Sem Problemas. Apenas insira seu email e receba um link para inserir uma nova senha.') }}
         </div>
 
         <!-- Session Status -->
@@ -28,9 +28,10 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Enviar nova senha por Email') }}
                 </x-button>
             </div>
+            <img src="https://media1.tenor.com/images/409f276236738f4ef5f571f207f7ea49/tenor.gif?itemid=15443162">
         </form>
     </x-auth-card>
 </x-guest-layout>
