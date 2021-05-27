@@ -3,8 +3,8 @@
 
 /* menu  -------------------------------------------------------------------------------*/
 #logo {
-    width: 150px;
-    height: 100px;
+    width: 130px;
+    height: 70px;
     margin-left: 1rem;
 }
 .navbar{
@@ -138,9 +138,6 @@ footer, nav{
     background-color: rgb(247, 247, 74);
 }
 
-footer{
-    box-sizing: border-box;
-}
 .col-3{
     width: 100%;
     padding-right: 15px;
@@ -160,4 +157,14 @@ footer{
 .vegan{
     width: 150px;
 }
-
+/*
+header {
+    height: 150px;
+  }
+  footer {
+    height: 350px;
+  }
+  main {
+    height: calc(100vh - 20px - 350px);
+  }
+*/

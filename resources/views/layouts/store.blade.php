@@ -92,7 +92,7 @@
             @yield('content')
 
         </main>
-        <footer class="p-5 text-dark mt-2">
+        <footer class="p-5 text-dark mt-2 footer navbar-fixed-bottom">
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-md-3 ">
