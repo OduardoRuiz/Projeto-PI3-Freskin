@@ -6,9 +6,13 @@
     width: 130px;
     height: 70px;
     margin-left: 1rem;
+    margin-top: -0.5rem;
+}
+#pesquisar{
+    margin-left: 0.8rem;
 }
 .navbar{
-    padding-bottom: 30px;
+    /*padding-bottom: 30px;*/
     color: rgb(49, 49, 49);
     font-family: 'Raleway-Bold',sans-serif;
 }
@@ -44,19 +48,25 @@
 .imgCadastro{
     width: 2rem;
 }
+.navbar-expand-md .navbar-collapse {
+    
+    padding-top: 2.8rem;
+}
 /* home -----------------------------------------------------------------------------------*/
 
 #banner {
-    background: url('http://supergentil.com.br/blog/wp-content/uploads/2019/02/frutas-legumes-e-verduras-das-estacoes.jpg');
+    background: url("https://by3302files.storage.live.com/y4pKtPadhKjhDcsX6RmzgfngTr1KDU4zTH8Lhzp7RDEWqwp8DziuN_NeTNcq4GWjppXpVL2lWJ5v7QoMsDD4vmfnNjt9FECShujj151WGQ47hgNk4dwUEkJH_q2I1d3aaiAr1sDkCbA2JPn8g2uB6cttmYtdSD0Abh88zoQYiR36TeyVgND1z8pK_6RljGY0pBoMmnctaPE51PTgnbvdDdFFXb9vrwAl4b1jpoNbvGqEOk/frutas-legumes-e-verduras-das-estacoes.jpg?psid=1&width=950&height=617");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 400px;
-    opacity: 0.8;
+    border-radius: 0.5rem;
+
+    
 
 }
 .botaoHome{
-    background-color: #2730C4;
+    background-color: #656bdd;
     font-size: 18px;
     color: white;
 }
@@ -156,6 +166,10 @@ footer, nav{
 }
 .vegan{
     width: 150px;
+}
+.row>* {
+    flex-shrink: unset;
+    width: 100%;
 }
 /*
 header {

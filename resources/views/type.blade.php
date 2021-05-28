@@ -27,8 +27,8 @@
     @foreach($tipos as $product)
 
     <div class="col-lg-3 col-md-6 col-sm-10 d-inline-block">
-        <div class="text-center cardimg" style="height: 150px">
-            <img src="{{asset($product->image) }}" class="h-100">
+        <div class="text-center cardimg" style="height: 150px; width: 200px;">
+            <img src="{{asset($product->image) }}" style="height: 100%;">
         </div>
         <div class="text-center">
             <span class="d-block fw-bold">{{ $product->name }}</span>
