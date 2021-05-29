@@ -89,21 +89,22 @@ class ProductsController extends Controller
 
     public function type($product)
     {
-        return view('type')->with( ['tipos' =>Product::where('type',$product)->get()]);
+        return view('type')->with( ['tipos' =>Product::where('type',$product)->paginate(12)]);
     }
     
     public function search(Request $request)
     {
       $search = $request->input('search');
-      return view('type')->with( ['tipos' =>Product::where('name','LIKE',"%{$search}%")->get()]);
+      return view('type')->with( ['tipos' =>Product::where('name','LIKE',"%{$search}%")->paginate(12)]);
     }
     public function products(Request $request)
     {
-        return view('type')->with( ['tipos' =>Product::all()]);
+        return view('type')->with( ['tipos' =>Product::paginate(12)]);
     }
     public function sobre(Request $request)
     {
         return view('sobre');
+        //dd(Product::where('type','Verdura')->paginate(1));
     }
     
 }

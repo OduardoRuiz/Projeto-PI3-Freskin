@@ -171,14 +171,3 @@ footer, nav{
     flex-shrink: unset;
     width: 100%;
 }
-/*
-header {
-    height: 150px;
-  }
-  footer {
-    height: 350px;
-  }
-  main {
-    height: calc(100vh - 20px - 350px);
-  }
-*/
