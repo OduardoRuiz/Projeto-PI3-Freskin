@@ -17,7 +17,7 @@
         <header>
 
 
-            <nav class="navbar navbar-expand-md navbar-light ">
+            <nav class="navbar navbar-expand-md navbar-light " id="nav">
 
                     <a class="navbar-brand" href="{{ url('/') }}"><img id="logo" src="{{ asset('imagens/logo1.png') }}" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
@@ -45,7 +45,7 @@
                         <div class="navbar-nav">
                             @if(Auth()->user())
 
-                            <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}"><img class="imgCadastro" src="https://img-premium.flaticon.com/png/512/747/747376.png?token=exp=1622002187~hmac=ef5b7907685d374f4989287e6d002737">Bem vindo {{Auth()->user()->name}}</a>
+                            <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}"><img class="imgCadastro" src="https://by3302files.storage.live.com/y4mJYAgYEJwnAG-wXFuOPMkb_VtM6M_Ogff6jubTrV3lB7YkMzC16ifBxqLek0RdQSdy8B2LkLOufsJNHQCS2h2iEIXlrMaxEykVwznR0exUsr5aMakQ7C_Su4F1EhIZj8b0wTp3X0IV5SM9XdzlGS3qY_odToYtMFaIPMeARZZRUUwtjMFedDyKoCADP3BHjvyEmz9VKcgMks8NtmxASMLPA/user%20%281%29.png?psid=1&width=256&height=256&cropMode=center">Bem vindo {{Auth()->user()->name}}</a>
 
 
                             <a class="nav-link d-flex carrinho" href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart fa-2x ml-4 text-dark"></i> ({{\App\Models\Cart::count() }})</a>
@@ -62,12 +62,13 @@
                                     </div>
 
                                 </form>
-                                @if(Auth()->user()->isAdmin == 1)
-                                <div>
-                                    <a class="urlMenu" id="adm" href="{{url('/product') }}">Painel de Controle</a>
+                                
+                            </div>
+                            @if(Auth()->user()->isAdmin == 1)
+                                <div class="pt-2 ml-3">
+                                    <a class="urlMenu " id="adm" href="{{url('/product') }}">Painel de Controle</a>
                                 </div>
                                 @endif
-                            </div>
                             @else
 
                             <a class="nav-link urlMenu " href="{{route('register') }}">Registrar</a>

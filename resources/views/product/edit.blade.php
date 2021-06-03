@@ -84,7 +84,7 @@
                 <textarea class="form-control" name="description">{{ $product->description }}</textarea>
             </div>
             <div class="row ">
-                <span class="form-label">Promoção</span>
+                <span class="form-label">Destaque</span>
                 <div>
                     <input class="form-check-input" type="radio" name="spotlight" value="sim" <?php echo $product->spotlight == 'sim' ? "checked" : " "; ?>>
                     <label class="form-check-label" for="spotlight">

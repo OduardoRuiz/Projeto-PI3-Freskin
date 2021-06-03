@@ -30,11 +30,11 @@
 @foreach($tipos as $product)
 
 <div class="col-lg-3 col-md-6 col-sm-10 d-inline-block">
-    <div class="text-center cardimg mt-5" style="height: 125px">
-        <img src="{{asset($product->image) }}" class="h-100 w-75">
+    <div class="text-center cardimg mt-5" style="height: 125px; ">
+        <img src="{{asset($product->image) }}" class="w-75" style="height: 9rem;">
     </div>
     <div class="text-center">
-        <span class="d-block fw-bold">{{ $product->name }}</span>
+        <span class="d-block fw-bold mt-4">{{ $product->name }}</span>
         <span class="d-block">R$ {{$product->price}}</span>
         <div class="mt-2">
             <a href="{{route('product.show', $product->id) }}" class="btn btn-secondary">Visualizar</a>

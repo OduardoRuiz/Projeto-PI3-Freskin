@@ -34,7 +34,6 @@
                         <th>Quantidade</th>
                         <th>Preço</th>
                         <th>Descrição</th>
-                        <th>Tag</th>
                         <th>Opções</th>
                     </tr>
                 </thead>
@@ -47,7 +46,7 @@
                         <td>{{ $prod->type }}</td>
                         <td>{{number_format($prod->qtds, 0, )  }}</td>
                         <td>{{ $prod->price }}</td>
-                        <td>{{ $prod->description }}</td>
+                        <td style="max-width: 17rem;">{{ $prod->description }}</td>
 
                         <td>
                             <a href="{{ route('product.show', $prod->id) }}" class="btn btn-sm btn-success">Visualizar</a>

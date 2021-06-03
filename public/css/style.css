@@ -55,15 +55,12 @@
 /* home -----------------------------------------------------------------------------------*/
 
 #banner {
-    background: url("https://by3302files.storage.live.com/y4pKtPadhKjhDcsX6RmzgfngTr1KDU4zTH8Lhzp7RDEWqwp8DziuN_NeTNcq4GWjppXpVL2lWJ5v7QoMsDD4vmfnNjt9FECShujj151WGQ47hgNk4dwUEkJH_q2I1d3aaiAr1sDkCbA2JPn8g2uB6cttmYtdSD0Abh88zoQYiR36TeyVgND1z8pK_6RljGY0pBoMmnctaPE51PTgnbvdDdFFXb9vrwAl4b1jpoNbvGqEOk/frutas-legumes-e-verduras-das-estacoes.jpg?psid=1&width=950&height=617");
+    background: url("https://by3302files.storage.live.com/y4mvZPdoJBynN8r_SRF4_uI5PymyWkcmRrOSvhxAEDM3izqbkmR2vZkblLL_rWvwDVBigsYFaeOLiWQKMGCpyCHgSQoc4EdA_0RTuSiB-cGeBesrEVo1fBkXM0niLZM683URnK-mS1DiD2Hyu3BTL3xGqT44vLJzEif9BR1CE_etEd_YMb50GRBPlMpLM1_HGcnsY-wCztY9xT9j761MZ8lOg/frutas-legumes-e-verduras-das-estacoes.jpg?psid=1&width=779&height=506");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 400px;
     border-radius: 0.5rem;
-
-    
-
 }
 .botaoHome{
     background-color: #656bdd;
@@ -143,8 +140,9 @@ p, .institucional{
     width: 0.5rem;
 }
 
+
 /* footer --------------------------------------------------------------------------------------- */
-footer, nav{
+footer, #nav{
     background-color: rgb(247, 247, 74);
 }
 
