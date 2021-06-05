@@ -131,6 +131,7 @@ p, .institucional{
     width: 25rem;
     display: inline;
 }
+
 #cep  {
     width: 10rem;
     display: inline-block;
@@ -168,4 +169,18 @@ footer, #nav{
 .row>* {
     flex-shrink: unset;
     width: 100%;
+}
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+   
 }

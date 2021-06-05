@@ -104,7 +104,6 @@ class ProductsController extends Controller
     public function sobre(Request $request)
     {
         return view('sobre');
-        //dd(Product::where('type','Verdura')->paginate(1));
     }
     
 }

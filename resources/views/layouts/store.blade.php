@@ -9,6 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/8455a3d02b.js" crossorigin="anonymous"></script>
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 
         @yield('css')
     </head>
@@ -47,8 +48,9 @@
 
                             <a class="nav-link" href="{{ route('user.profile', Auth()->user()->id) }}"><img class="imgCadastro" src="https://by3302files.storage.live.com/y4mJYAgYEJwnAG-wXFuOPMkb_VtM6M_Ogff6jubTrV3lB7YkMzC16ifBxqLek0RdQSdy8B2LkLOufsJNHQCS2h2iEIXlrMaxEykVwznR0exUsr5aMakQ7C_Su4F1EhIZj8b0wTp3X0IV5SM9XdzlGS3qY_odToYtMFaIPMeARZZRUUwtjMFedDyKoCADP3BHjvyEmz9VKcgMks8NtmxASMLPA/user%20%281%29.png?psid=1&width=256&height=256&cropMode=center">Bem vindo {{Auth()->user()->name}}</a>
 
-
+                           
                             <a class="nav-link d-flex carrinho" href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart fa-2x ml-4 text-dark"></i> ({{\App\Models\Cart::count() }})</a>
+                            
                             <div class=" space-y-1 sair">
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
@@ -93,7 +95,7 @@
             @yield('content')
 
         </main>
-        <footer class="p-5 text-dark mt-2 footer navbar-fixed-bottom">
+        <footer class="p-5 text-dark ">
             <div class="container-fluid ">
                 <div class="row">
                     <div class="col-md-3 ">

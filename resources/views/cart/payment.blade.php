@@ -60,7 +60,7 @@
             <label for="cc_card">Número do cartão</label>
             <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                <input type="text" id="cc_card" name="cc_card" class="form-control" required>
+                <input type="text" id="cc_card"  onkeypress="soNumero(this.id)" name="cc_card" class="form-control" required maxlength="19">
             </div>
         </div>
     </div>
@@ -69,18 +69,20 @@
             <label for="cc-nome">Código CVV (Atras do cartão)</label>
             <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-unlock"></i></span>
-                <input type="text" id="cc-cvv" name="cc-cvv" class="form-control" required>
+                <input type="text" id="cc-cvv" onkeypress="soNumero(this.id)" name="cc-cvv" class="form-control" required maxlength="3">
             </div>
         </div>
         <div class="col-md-5 col-10 mb-3">
             <label for="cc-nome">Data de expiração</label>
             <div class="input-group">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                <input type="text" id="cc-date" name="cc-date" class="form-control" required>
+                <input type="text" id="cc-date" onkeypress="soNumero(this.id)" name="cc-date" class="form-control" required required maxlength="7">
             </div>
         </div>
     </div>
+    @if(Auth()->user()->isAdmin == 0)
     <button type="submit" class="btn btn-lg btn-success float-end">Efetuar Pagamento</button>
+    @endif
 </form>
 
 @endsection
