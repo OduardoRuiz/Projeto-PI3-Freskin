@@ -20,7 +20,7 @@
     <div class="row">
         <div class="text-center my-2">
             <h2>Produtos Direto da Horta</h2>
-            <span class="text-muted">Nossos produtos são escolhidos com todo carinho e nossos fornecedores são escolhidos de forma criteriosa para melhor atende-lo atende-lo</span>
+            <span class="text-muted">Nossos produtos são escolhidos com todo carinho e nossos fornecedores são escolhidos de forma criteriosa para melhor atende-lo </span>
         </div>
     </div>
     <div class="text-center my-2">

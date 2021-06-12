@@ -31,7 +31,7 @@
                     {{ __('Enviar nova senha por Email') }}
                 </x-button>
             </div>
-            <img src="https://media1.tenor.com/images/409f276236738f4ef5f571f207f7ea49/tenor.gif?itemid=15443162">
+            <!--<img src="https://media1.tenor.com/images/409f276236738f4ef5f571f207f7ea49/tenor.gif?itemid=15443162">-->
         </form>
     </x-auth-card>
 </x-guest-layout>

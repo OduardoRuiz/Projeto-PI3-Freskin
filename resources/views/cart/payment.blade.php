@@ -7,11 +7,11 @@
         @foreach(\App\Models\Address::where('user_id','=', Auth()->user()->id)->get() as $endereco)
         <address class="ms-3">
             <!--Implementar aqui para puxar o endereço de usuario cadastrado-->
-           
+
             <p>Endereço: {{$endereco->address}}, {{$endereco->address_number}}, {{$endereco->neighborhood}} </p>
-            <p> Cidede: {{$endereco->address_city}}, {{$endereco->address_state}}</p>
+            <p> Cidade: {{$endereco->address_city}}, {{$endereco->address_state}}</p>
             <p>Cep: {{$endereco->cep}}</p>
-    
+
         </address>
         @endforeach
         <a href="{{ route('user.profile', Auth()->user()->id) }}" class="float-end me-4">Trocar o endereço</a>

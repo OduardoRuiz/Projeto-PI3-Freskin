@@ -47,7 +47,7 @@
                 <label class="mb-3 mt-2">
                     Complemento:
                 </label>
-                <input type="text" name="complement" id="complemento" value="{{$endereco->complement}}" class="form-control">
+                <input type="text" name="complement" id="complemento" required value="{{$endereco->complement}}" class="form-control">
             </div>
 
             <div>
@@ -112,7 +112,7 @@
                 <label class="mb-3 mt-2">
                     Complemento:
                 </label>
-                <input type="text" name="complement" id="complemento" value="" class="form-control">
+                <input type="text" name="complement" required id="complemento" value="" class="form-control">
             </div>
 
             <div>
